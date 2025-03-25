@@ -60,13 +60,15 @@ if uploaded_file:
             "pass": "Not a Fit"
         }
 
-        if 'Transcript' in df.columns:
-            df['Sentiment_Category'] = df['Transcript'].apply(
-                lambda x: next((v for k, v in sentiment_map.items() if isinstance(x, str) and k in x.lower()), "Evaluating")
-            )
-            st.write(df[['Transcript', 'Sentiment_Category']])
-        else:
-            st.warning("No 'Transcript' column found for sentiment analysis.")
+        if 'Transcript' in df.columns or 'Notes' in df.columns:
+    text_col = 'Transcript' if 'Transcript' in df.columns else 'Notes'
+    df['Sentiment_Category'] = df[text_col].apply(
+        lambda x: next((v for k, v in sentiment_map.items() if isinstance(x, str) and k in x.lower()), "Evaluating")
+    )
+    st.write(df[[text_col, 'Sentiment_Category']])
+else:
+    st.warning("No 'Transcript' or 'Notes' column found for sentiment analysis.")
+
 
         st.subheader("Recommended Next Steps")
         st.markdown("""
