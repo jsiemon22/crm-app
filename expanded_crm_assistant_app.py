@@ -69,10 +69,19 @@ if uploaded_file:
             st.warning("No 'Transcript' column found for sentiment analysis.")
 
         st.subheader("Recommended Next Steps")
-        st.markdown("- Wait for Response Until [Date]  
+        st.markdown("""
+- Wait for Response Until [Date]  
 - Explore [Pain Point] Further  
 - Get Clarification on [Point]  
-- Client Needs [Specific Need]")
+- Client Needs [Specific Need]  
+- May Be Responsive to Promotions  
+- Interested but Missing [Feature]  
+- Not a Fit – Consider Removing  
+- High Intent – Prioritize Outreach  
+- Loop in [Relevant Internal Role]  
+- Re-engagement Opportunity  
+- Deal at Risk – Escalate Internally
+""")
 
     elif tool == "Visualize":
         st.header("🎯 Visualize: Client Journey & Funnels")
