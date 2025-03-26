@@ -71,8 +71,8 @@ else:
 
 
 
-        st.subheader("Recommended Next Steps")
-        st.markdown("""
+st.subheader("Recommended Next Steps")
+st.markdown("""
 - Wait for Response Until [Date]  
 - Explore [Pain Point] Further  
 - Get Clarification on [Point]  
