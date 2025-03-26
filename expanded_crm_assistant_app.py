@@ -168,9 +168,9 @@ else:
             pdf.set_font("Arial", 'B', 14)
             pdf.cell(200, 10, txt="1. Data Hygiene Summary", ln=True)
             pdf.set_font("Arial", size=12)
-            pdf.multi_cell(0, 8, txt="- Hygiene tasks completed via app logic.
+            pdf.multi_cell(0, 8, txt="""- Hygiene tasks completed via app logic.
 - Missing values flagged.
-")
+""")
 
             # Account summaries
             pdf.set_font("Arial", 'B', 14)
